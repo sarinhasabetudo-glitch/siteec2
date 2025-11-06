@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarah Vitória | Estilista & Designer Profissional</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* === CONFIGURAÇÕES GLOBAIS E RESET === */
+        :root {
+            --cor-primaria: #AD8B73; /* Um tom de bege/bronze sofisticado */
+            --cor-secundaria: #FDFDFD; /* Branco levemente "sujo" */
+            --cor-texto: #333333; /* Cinza escuro para leitura */
+            --cor-fundo: #FFFFFF;
+            --fonte-titulo: 'Playfair Display', serif;
+            --fonte-corpo: 'Montserrat', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--fonte-corpo);
+            color: var(--cor-texto);
+            background-color: var(--cor-fundo);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--fonte-titulo);
+            font-weight: 700;
+            color: #222;
+        }
+
+        h2.section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        /* Linha decorativa abaixo dos títulos */
+        h2.section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--cor-primaria);
+            margin: 10px auto 0;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--cor-primaria);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #000;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* === 1. CABEÇALHO E NAVEGAÇÃO === */
+        .header {
+            width: 100%;
+            padding: 20px 0;
+            background-color: var(--cor-fundo);
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--fonte-titulo);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-menu li {
+            margin-left: 30px;
+        }
+
+        .nav-menu a {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--cor-texto);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: #000;
+            border-bottom-color: var(--cor-primaria);
+        }
+
+        /* === 2. SEÇÃO HERO (INÍCIO) === */
+        #hero {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        #hero .container {
+            max-width: 800px;
+        }
+
+        #hero h1 {
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--cor-primaria);
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid var(--cor-primaria);
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: white;
+            border-color: white;
+        }
+
+        /* === 3. SEÇÃO SOBRE === */
+        #sobre {
+            background-color: var(--cor-secundaria);
+        }
+        
+        .sobre-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .sobre-image {
+            flex: 1;
+        }
+
+        .sobre-image img {
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            /* Substitua pela sua foto */
+            content: url('https://images.unsplash.com/photo-1594744800539-7a1f5EXEMfM0?fit=crop&w=600&h=700&q=80');
+            object-fit: cover;
+            width: 100%;
+            height: 500px;
+        }
+
+        .sobre-text {
+            flex: 1.2;
+        }
+
+        .sobre-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .sobre-text p {
+            margin-bottom: 15px;
+        }
+
+        /* === 4. SEÇÃO SERVIÇOS === */
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .servico-item {
+            text-align: center;
+            padding: 30px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .servico-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .servico-item .icon {
+            font-size: 2.5rem;
+            color: var(--cor-primaria);
+            margin-bottom: 20px;
+        }
+
+        .servico-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        /* === 5. SEÇÃO PORTFÓLIO === */
+        #portfolio {
+            background-color: var(--cor-secundaria);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            /* Um grid de 3 colunas */
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.7));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .portfolio-overlay h4 {
+            color: white;
+            font-size: 1.2rem;
+            font-family: var(--fonte-titulo);
+            transform: translateY(10px);
+            transition: transform 0.4s ease;
+        }
+
+        .portfolio-overlay p {
+            color: #ddd;
+            font-size: 0.9rem;
+            transform: translateY(10px);
+            transition: transform 0.4s ease;
+            transition-delay: 0.1s;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-item:hover .portfolio-overlay h4,
+        .portfolio-item:hover .portfolio-overlay p {
+            transform: translateY(0);
+        }
+
+        /* === 6. SEÇÃO CONTATO === */
+        #contato .container {
+            max-width: 700px;
+            text-align: center;
+        }
+
+        #contato p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        
+        .social-links {
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            font-size: 1.8rem;
+            color: var(--cor-texto);
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--cor-primaria);
+        }
+
+        .email-link {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        /* === 7. RODAPÉ === */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: var(--cor-texto);
+            color: #ccc;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        /* === RESPONSIVIDADE (Celular) === */
+        @media (max-width: 768px) {
+            h2.section-title {
+                font-size: 2rem;
+            }
+            
+            /* Ajuste do Header */
+            .header .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-menu ul {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .nav-menu li {
+                margin: 0 10px;
+            }
+
+            /* Ajuste do Hero */
+            #hero {
+                height: 70vh;
+            }
+            #hero h1 {
+                font-size: 2.8rem;
+            }
+            #hero p {
+                font-size: 1rem;
+            }
+
+            /* Ajuste do Sobre */
+            .sobre-content {
+                flex-direction: column;
+            }
+            .sobre-image img {
+                height: 400px;
+            }
+
+            /* Ajuste do Portfólio */
+            .portfolio-grid {
+                /* 1 coluna em telas pequenas */
+                grid-template-columns: 1fr;
+            }
+
+            /* Ajuste de Serviços */
+            .servicos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 992px) {
+            /* Ajuste do Portfólio para Tablets */
+            .portfolio-grid {
+                /* 2 colunas em tablets */
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="#hero" class="logo">Sarah Vitória</a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#portfolio">Portfólio</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="hero">
+            <div class="container">
+                <h1>Sarah Vitória</h1>
+                <p>Estilista e Designer Profissional<br>Criando moda com propósito e elegância.</p>
+                <a href="#portfolio" class="cta-button">Ver meu trabalho</a>
+            </div>
+        </section>
+
+        <section id="sobre">
+            <div class="container">
+                <h2 class="section-title">Sobre Mim</h2>
+                <div class="sobre-content">
+                    <div class="sobre-image">
+                        </div>
+                    <div class="sobre-text">
+                        <h3>Olá, sou Sarah Vitória.</h3>
+                        <p>Sou apaixonada por transformar tecidos em arte e conceitos em realidade. Com mais de [X] anos de experiência no mercado, minha jornada no design de moda é movida pela busca incessante da beleza, inovação e sustentabilidade.</p>
+                        <p>Minha filosofia de design foca na elegância atemporal, com um toque contemporâneo. Acredito que a roupa é uma forma de expressão pessoal e meu objetivo é criar peças que não apenas vistam, mas que contem uma história e empoderem quem as usa.</p>
+                        <p>Desde o croqui inicial até a passarela, eu supervisiono cada detalhe para garantir qualidade e originalidade.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicos">
+            <div class="container">
+                <h2 class="section-title">Serviços</h2>
+                <div class="servicos-grid">
+                    <div class="servico-item">
+                        <div class="icon"><i class="fa-solid fa-gem"></i></div>
+                        <h3>Design de Coleção</h3>
+                        <p>Criação e desenvolvimento de coleções completas (cápsula ou sazonais), desde a pesquisa de tendências até a ficha técnica.</p>
+                    </div>
+                    <div class="servico-item">
+                        <div class="icon"><i class="fa-solid fa-palette"></i></div>
+                        <h3>Consultoria de Estilo</h3>
+                        <p>Análise de imagem pessoal, coloração e desenvolvimento de um guarda-roupa estratégico e autêntico para clientes.</p>
+                    </div>
+                    <div class="servico-item">
+                        <div class="icon"><i class="fa-solid fa-scissors"></i></div>
+                        <h3>Styling & Produção</h3>
+                        <p>Produção de moda para editoriais, campanhas publicitárias, desfiles e catálogos, cuidando de todo o conceito visual.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <div class="container">
+                <h2 class="section-title">Portfólio</h2>
+                <div class="portfolio-grid">
+                    
+                    <a href="#" class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1542060748-10c28b62716f?fit=crop&w=600&h=700&q=80" alt="Descrição do Projeto 1">
+                        <div class="portfolio-overlay">
+                            <h4>Coleção 'Aurora'</h4>
+                            <p>Design de Coleção</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1551028719-00769b96366e?fit=crop&w=600&h=700&q=80" alt="Descrição do Projeto 2">
+                        <div class="portfolio-overlay">
+                            <h4>Editorial 'Urbano'</h4>
+                            <p>Styling</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1545291764-c4d64Bda11df?fit=crop&w=600&h=700&q=80" alt="Descrição do Projeto 3">
+                        <div class="portfolio-overlay">
+                            <h4>Campanha 'Verano'</h4>
+                            <p>Produção de Moda</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1581338834697-b3f2d363530c?fit=crop&w=600&h=700&q=80" alt="Descrição do Projeto 4">
+                        <div class="portfolio-overlay">
+                            <h4>Alfaiataria Moderna</h4>
+                            <p>Design de Peça</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1534653299134-45e7b51d137c?fit=crop&w=600&h=700&q=80" alt="Descrição do Projeto 5">
+                        <div class="portfolio-overlay">
+                            <h4>Lookbook 'Noite'</h4>
+                            <p>Styling</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1509631199346-51f714241e54?fit=crop&w=600&h=700&q=80" alt="Descrição do Projeto 6">
+                        <div class="portfolio-overlay">
+                            <h4>Consultoria Pessoal</h4>
+                            <p>Transformação de Imagem</p>
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="container">
+                <h2 class="section-title">Contato</h2>
+                <p>Adoraria ouvir sobre seu projeto ou ideia. Vamos criar algo incrível juntos! Entre em contato através do e-mail ou das minhas redes sociais.</p>
+                
+                <a href="mailto:seu.email@exemplo.com" class="email-link">seu.email@exemplo.com</a>
+
+                <div class="social-links">
+                    <a href="#" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" target="_blank" title="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+                    <a href="#" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank" title="Behance"><i class="fa-brands fa-behance"></i></a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sarah Vitória. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
